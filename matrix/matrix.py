@@ -171,7 +171,11 @@ class Matrix(Generic[K]):
                         self.value[k] -= deduct * normalized[count]
                         count += 1
 
-        # total time complexity is 2 * (m x n) hence O(n^2), space complexity O(1)
+        # normalize_row is O(n) (n = column count), pivot is O(n*m) (m = row count,
+        # for each of the m rows it may deduct across n columns). Run once per row (m),
+        # hence total time complexity is O(n*m^2), ie O(n^3) for a square matrix.
+        # space complexity is O(n): the temporary 'normalized' list is discarded each
+        # iteration rather than accumulated, well within the O(n^2) budget.
         for row in range(self.size()[0]):
             column, normalized = normalize_row(row)
             if column is not None:

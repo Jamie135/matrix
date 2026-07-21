@@ -28,4 +28,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (TypeError, ValueError, ZeroDivisionError) as e:
+        print(f"Error: {e}")
