@@ -55,6 +55,7 @@ def main():
         u = Vector(a)
         u.add(Vector(b))
         print(f"{a} + {b} = {u.value}")
+        print()
 
     print("-- eval sheet: Vector sub --")
     for a, b in [
@@ -69,6 +70,7 @@ def main():
         u = Vector(a)
         u.sub(Vector(b))
         print(f"{a} - {b} = {u.value}")
+        print()
 
     print("-- eval sheet: Vector scl --")
     for a, scalar in [
@@ -81,6 +83,7 @@ def main():
         u = Vector(a)
         u.scl(scalar)
         print(f"{a} * {scalar} = {u.value}")
+        print()
 
     print("-- eval sheet: Matrix add --")
     for a, b in [

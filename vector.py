@@ -46,6 +46,7 @@ class Vector(Generic[K]):
         '''Utility function. Print vector values'''
         for i in self._value:
             print([i])
+        print()
 
     # exercise 00
     def add(self, v: 'Vector[K]'):

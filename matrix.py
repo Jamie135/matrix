@@ -54,6 +54,7 @@ class Matrix(Generic[K]):
         '''Utility function. Print matrix values'''
         for i in range(self.size()[0]):
             print([self.value[j] for j in range(i, len(self.value), self.size()[0])])
+        print()
 
     # exercise 00
     def add(self, v: 'Matrix[K]'):
