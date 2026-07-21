@@ -32,6 +32,11 @@ def main():
     print(angle_cos(Vector([4., 2.]), Vector([1., 1.])))    # 0.9486832980505138
     print(angle_cos(Vector([-7., 3.]), Vector([6., 4.])))   # -0.5462677805469223
 
+    print("-- eval sheet: commutativity (order must not matter) --")
+    for a, b in [([8., 7.], [3., 2.]), ([-7., 3.], [6., 4.])]:
+        u, v = Vector(a), Vector(b)
+        print(f"angle_cos(u, v) == angle_cos(v, u): {angle_cos(u, v) == angle_cos(v, u)}")
+
 
 if __name__ == "__main__":
     try:

@@ -27,8 +27,10 @@ class Vector(Generic[K]):
     def __init__(self, value: list[K]):
         if len(value) == 0:
             raise ValueError("Empty list in Vector initialisation")
-        if any(not isinstance(element, type(value[0])) for element in value):
-            raise ValueError("Elements in argument are not of same type")
+        if not isinstance(value, list):
+            raise ValueError("Argument is not a list")
+        if len(value) > 0 and not all(isinstance(value[i], (int, float, complex)) for i in range(len(value))):
+            raise ValueError("Elements in argument are not of type int, float or complex")
         self._value: list[K] = list(value)
 
     @property

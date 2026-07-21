@@ -24,6 +24,7 @@ def main():
     print("-- eval sheet extra cases --")
     Matrix([[0., 0.], [0., 0.]]).mul_vec(Vector([4., 2.])).print_vector()  # [0, 0]
     Matrix([[1., 1.], [1., 1.]]).mul_vec(Vector([4., 2.])).print_vector()  # [6, 6]
+    Matrix([[2., 0.], [0., 2.]]).mul_vec(Vector([2., 1.])).print_vector()  # [4, 2]
     Matrix([[0.5, 0.], [0., 0.5]]).mul_vec(Vector([4., 2.])).print_vector()  # [2, 1]
 
 

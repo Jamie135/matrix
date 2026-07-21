@@ -52,6 +52,9 @@ def main():
     print(linear_combination(
         [Vector([-42., 42.]), Vector([1., 3.]), Vector([10., 20.])],
         [1., -10., -1.]).value)  # [-62, -8]
+    print(linear_combination(
+        [Vector([-42., 100., -69.5]), Vector([1., 3., 5.])],
+        [1., -10.]).value)  # [-52, 70, -119.5]
 
 
 if __name__ == "__main__":

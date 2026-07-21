@@ -25,6 +25,7 @@ def main():
     print(Matrix([[0., 1.], [1., 0.]]).determinant())  # -1
     print(Matrix([[1., 2.], [3., 4.]]).determinant())  # -2
     print(Matrix([[-7., 5.], [4., 6.]]).determinant())  # -62
+    print(Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).determinant())  # 1
 
 
 if __name__ == "__main__":

@@ -19,6 +19,8 @@ def main():
     # [0.143678161, 0.074712644, -0.206896552]
 
     print("-- eval sheet extra cases --")
+    Matrix([[1., 0.], [0., 1.]]).inverse().print_matrix()  # [1, 0] [0, 1]
+    Matrix([[2., 0.], [0., 2.]]).inverse().print_matrix()  # [0.5, 0] [0, 0.5]
     Matrix([[0.5, 0.], [0., 0.5]]).inverse().print_matrix()  # [2, 0] [0, 2]
     Matrix([[0., 1.], [1., 0.]]).inverse().print_matrix()  # [0, 1] [1, 0]
     Matrix([[1., 2.], [3., 4.]]).inverse().print_matrix()  # [-2, 1] [1.5, -0.5]
