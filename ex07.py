@@ -26,6 +26,9 @@ def main():
     Matrix([[1., 1.], [1., 1.]]).mul_vec(Vector([4., 2.])).print_vector()  # [6, 6]
     Matrix([[2., 0.], [0., 2.]]).mul_vec(Vector([2., 1.])).print_vector()  # [4, 2]
     Matrix([[0.5, 0.], [0., 0.5]]).mul_vec(Vector([4., 2.])).print_vector()  # [2, 1]
+    Matrix([[9, -4, 1], [3, 11, 2]]).mul_mat(Matrix([[2., 1.], [4., 2.], [1., 0.]])).print_matrix()
+    Matrix([[9, -4, 1], [3, 11, 2], [1, 0, 0]]).mul_mat(Matrix([[2., 1., 0., 7], [4., 2., -5, -2], [1., 0., -1, 4]])).print_matrix()
+    Matrix([[2., 1.], [1., 2.]]).mul_mat(Matrix([[2.], [4.]])).print_matrix()
 
 
 if __name__ == "__main__":
