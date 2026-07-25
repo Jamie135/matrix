@@ -144,6 +144,8 @@ class Matrix(Generic[K]):
         '''return matrix converted to reduced row echelon form'''
 
         def normalize_row(row):
+            '''find the current row's pivot column and scale the row to make the pivot 1,
+            return the pivot column and the normalized row'''
             normalized: list[K] = []
             column: int | None = None
             for j in range(row, self.size()[1], self.size()[0]):
@@ -160,6 +162,7 @@ class Matrix(Generic[K]):
             return (column, normalized)
 
         def pivot(row, column, normalized):
+            '''from the current normalized row, eliminate the pivot column from all other rows'''
             for j in range(0, self.size()[0]):
                 if row == j:
                     continue
