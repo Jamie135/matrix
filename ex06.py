@@ -24,7 +24,7 @@ def cross_product(u: Vector[K], v: Vector[K]) -> Vector[K]:
 
 def main():
     '''Test case for exercise 06'''
-    print("Results for exercise 06")
+    print("Results for exercise 06\n")
 
     cross_product(Vector([0., 0., 1.]), Vector([1., 0., 0.])).print_vector()
     # [0.0] [1.0] [0.0]
@@ -33,14 +33,14 @@ def main():
     cross_product(Vector([4., 2., -3.]), Vector([-2., -5., 16.])).print_vector()
     # [17.0] [-58.0] [-16.0]
 
-    print("-- eval sheet extra cases --")
+    print("-- eval sheet extra cases --\n")
     print(cross_product(Vector([0., 0., 0.]), Vector([0., 0., 0.])).value)  # [0, 0, 0]
     print(cross_product(Vector([1., 0., 0.]), Vector([0., 0., 0.])).value)  # [0, 0, 0]
     print(cross_product(Vector([1., 0., 0.]), Vector([0., 1., 0.])).value)  # [0, 0, 1]
     print(cross_product(Vector([8., 7., -4.]), Vector([3., 2., 1.])).value)  # [15, -20, -5]
     print(cross_product(Vector([1., 1., 1.]), Vector([1., 1., 1.])).value)  # [0, 0, 0]
 
-    print("-- K = Complex --")
+    print("\n-- K = Complex --\n")
     cross_product(
         Vector([Complex(0.), Complex(0.), Complex(1.)]),
         Vector([Complex(1.), Complex(0.), Complex(0.)]),

@@ -19,7 +19,7 @@ def angle_cos(u: Vector[K], v: Vector[K]) -> float:
 
 def main():
     '''Test case for exercise 05'''
-    print("Results for exercise 05")
+    print("Results for exercise 05\n")
 
     print(angle_cos(Vector([1., 0.]), Vector([1., 0.])))    # 1.0
     print(angle_cos(Vector([1., 0.]), Vector([0., 1.])))    # 0.0
@@ -27,18 +27,18 @@ def main():
     print(angle_cos(Vector([2., 1.]), Vector([4., 2.])))    # 1.0
     print(angle_cos(Vector([1., 2., 3.]), Vector([4., 5., 6.])))  # 0.974631846
 
-    print("-- eval sheet extra cases --")
+    print("\n-- eval sheet extra cases --\n")
     print(angle_cos(Vector([8., 7.]), Vector([3., 2.])))    # 0.9914542955425437
     print(angle_cos(Vector([1., 1.]), Vector([1., 1.])))    # 1
     print(angle_cos(Vector([4., 2.]), Vector([1., 1.])))    # 0.9486832980505138
     print(angle_cos(Vector([-7., 3.]), Vector([6., 4.])))   # -0.5462677805469223
 
-    print("-- eval sheet: commutativity (order must not matter) --")
+    print("\n-- eval sheet: commutativity (order must not matter) --\n")
     for a, b in [([8., 7.], [3., 2.]), ([-7., 3.], [6., 4.])]:
         u, v = Vector(a), Vector(b)
         print(f"angle_cos(u, v) == angle_cos(v, u): {angle_cos(u, v) == angle_cos(v, u)}")
 
-    print("-- K = Complex --")
+    print("\n-- K = Complex --\n")
     print(angle_cos(Vector([Complex(1.), Complex(0.)]), Vector([Complex(1.), Complex(0.)])))
     # 1.0
     print(angle_cos(Vector([Complex(1., 2.), Complex(3., -1.)]),

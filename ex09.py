@@ -6,19 +6,19 @@ from matrix import Matrix
 
 def main():
     '''Test case for exercise 09'''
-    print("Results for exercise 09")
+    print("Results for exercise 09\n")
 
     Matrix([[1., 0.], [0., 1.]]).transpose().print_matrix()  # [1.0, 0.0] [0.0, 1.0]
     Matrix([[1., 2.], [3., 4.]]).transpose().print_matrix()  # [1.0, 3.0] [2.0, 4.0]
     Matrix([[1., 2.], [3., 4.], [5., 6.]]).transpose().print_matrix()
     # [1.0, 3.0, 5.0] [2.0, 4.0, 6.0]
 
-    print("-- eval sheet extra cases --")
+    print("-- eval sheet extra cases --\n")
     Matrix([[0., 0.], [0., 0.]]).transpose().print_matrix()  # [0, 0] [0, 0]
     Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).transpose().print_matrix()
     # identity, unchanged
 
-    print("-- K = Complex --")
+    print("-- K = Complex --\n")
     i = Complex(0., 1.)
     Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]).transpose().print_matrix()
     Matrix([[Complex(1., 2.), Complex(3., -1.)], [Complex(0., 1.), Complex(1., 1.)]]) \

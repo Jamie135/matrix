@@ -6,7 +6,7 @@ from vector import Vector
 
 def main():
     '''Test case for exercise 04'''
-    print("Results for exercise 04")
+    print("Results for exercise 04\n")
 
     u = Vector([0., 0., 0.])
     print(u.norm_1(), u.norm(), u.norm_inf())  # 0.0 0.0 0.0
@@ -17,12 +17,12 @@ def main():
     u = Vector([-1., -2.])
     print(u.norm_1(), u.norm(), u.norm_inf())  # 3.0 2.236067977 2.0
 
-    print("-- eval sheet extra cases --")
+    print("\n-- eval sheet extra cases --\n")
     for coords in ([0.], [1.], [0., 0.], [1., 0.], [2., 1.], [4., 2.], [-4., -2.]):
         v = Vector(coords)
         print(f"{coords}: norm_1={v.norm_1()} norm={v.norm()} norm_inf={v.norm_inf()}")
 
-    print("-- K = Complex --")
+    print("-- K = Complex --\n")
     u = Vector([Complex(3., 4.)])
     print(u.norm_1(), u.norm(), u.norm_inf())  # 5.0 5.0 5.0 (norm relies on |z|=modulus)
     u = Vector([Complex(3., 4.), Complex(0., 1.)])

@@ -11,18 +11,20 @@ def main():
     print(Vector([0., 0.]).dot(Vector([1., 1.])))   # 0.0
     print(Vector([1., 1.]).dot(Vector([1., 1.])))   # 2.0
     print(Vector([-1., 6.]).dot(Vector([3., 2.])))  # 9.0
+    print()
 
     print("-- eval sheet extra cases --")
     print(Vector([1., 0.]).dot(Vector([0., 0.])))  # 0
     print(Vector([1., 0.]).dot(Vector([1., 0.])))  # 1
     print(Vector([1., 0.]).dot(Vector([0., 1.])))  # 0
     print(Vector([4., 2.]).dot(Vector([2., 1.])))  # 10
-
+    print()
     print("-- K = Complex --")
     i = Complex(0., 1.)
     print(Vector([i]).dot(Vector([i])))  # (1.0+0.0i) -- real and non-negative
     print(Vector([Complex(1., 2.), Complex(0., 1.)])
           .dot(Vector([Complex(3., -1.), Complex(2.)])))  # (1.0+9.0i)
+    print()
 
 
 if __name__ == "__main__":

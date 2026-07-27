@@ -56,6 +56,7 @@ def main():
     print(linear_combination(
         [Vector([-42., 100., -69.5]), Vector([1., 3., 5.])],
         [1., -10.]).value)  # [-52, 70, -119.5]
+    print()
 
     print("-- K = Complex --")
     e1 = Vector([Complex(1.), Complex(0.)])
