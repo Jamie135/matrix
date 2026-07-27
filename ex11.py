@@ -6,7 +6,7 @@ from matrix import Matrix
 
 def main():
     '''Test case for exercise 11'''
-    print("Results for exercise 11")
+    print("Results for exercise 11\n")
 
     print(Matrix([[1., -1.], [-1., 1.]]).determinant())  # 0.0
     print(Matrix([[2., 0., 0.], [0., 2., 0.], [0., 0., 2.]]).determinant())  # 8.0
@@ -18,7 +18,7 @@ def main():
         [28., -4., 17., 1.],
     ]).determinant())  # 1032
 
-    print("-- eval sheet extra cases --")
+    print("\n-- eval sheet extra cases --\n")
     print(Matrix([[0., 0.], [0., 0.]]).determinant())  # 0
     print(Matrix([[1., 0.], [0., 1.]]).determinant())  # 1
     print(Matrix([[2., 0.], [0., 2.]]).determinant())  # 4
@@ -28,7 +28,7 @@ def main():
     print(Matrix([[-7., 5.], [4., 6.]]).determinant())  # -62
     print(Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).determinant())  # 1
 
-    print("-- K = Complex --")
+    print("\n-- K = Complex --\n")
     i = Complex(0., 1.)
     print(Matrix([[Complex(1.), Complex(1.)], [Complex(0.), i]]).determinant())  # (0.0+1.0i)
     print(Matrix([[Complex(1., 2.), Complex(3., -1.)], [Complex(0., 1.), Complex(1., 1.)]])
