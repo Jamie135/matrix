@@ -1,6 +1,7 @@
 '''Exercise 05 - Cosine, and a main function to run tests'''
 
 from typing import TypeVar
+from complex import Complex
 from vector import Vector
 
 K = TypeVar("K")
@@ -36,6 +37,13 @@ def main():
     for a, b in [([8., 7.], [3., 2.]), ([-7., 3.], [6., 4.])]:
         u, v = Vector(a), Vector(b)
         print(f"angle_cos(u, v) == angle_cos(v, u): {angle_cos(u, v) == angle_cos(v, u)}")
+
+    print("-- K = Complex --")
+    print(angle_cos(Vector([Complex(1.), Complex(0.)]), Vector([Complex(1.), Complex(0.)])))
+    # 1.0
+    print(angle_cos(Vector([Complex(1., 2.), Complex(3., -1.)]),
+                     Vector([Complex(0., 1.), Complex(1., 1.)])))
+    # (0.5962847939999439-0.74535599249993i)
 
 
 if __name__ == "__main__":

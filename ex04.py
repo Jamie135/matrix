@@ -1,5 +1,6 @@
 '''Exercise 04 - Norm, and a main function to run tests'''
 
+from complex import Complex
 from vector import Vector
 
 
@@ -20,6 +21,12 @@ def main():
     for coords in ([0.], [1.], [0., 0.], [1., 0.], [2., 1.], [4., 2.], [-4., -2.]):
         v = Vector(coords)
         print(f"{coords}: norm_1={v.norm_1()} norm={v.norm()} norm_inf={v.norm_inf()}")
+
+    print("-- K = Complex --")
+    u = Vector([Complex(3., 4.)])
+    print(u.norm_1(), u.norm(), u.norm_inf())  # 5.0 5.0 5.0 (norm relies on |z|=modulus)
+    u = Vector([Complex(3., 4.), Complex(0., 1.)])
+    print(u.norm_1(), u.norm(), u.norm_inf())  # 6.0 5.09901951 5.0
 
 
 if __name__ == "__main__":

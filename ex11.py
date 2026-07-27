@@ -1,5 +1,6 @@
 '''Exercise 11 - Determinant, and a main function to run tests'''
 
+from complex import Complex
 from matrix import Matrix
 
 
@@ -26,6 +27,12 @@ def main():
     print(Matrix([[1., 2.], [3., 4.]]).determinant())  # -2
     print(Matrix([[-7., 5.], [4., 6.]]).determinant())  # -62
     print(Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).determinant())  # 1
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    print(Matrix([[Complex(1.), Complex(1.)], [Complex(0.), i]]).determinant())  # (0.0+1.0i)
+    print(Matrix([[Complex(1., 2.), Complex(3., -1.)], [Complex(0., 1.), Complex(1., 1.)]])
+          .determinant())  # (-2.0+0.0i)
 
 
 if __name__ == "__main__":

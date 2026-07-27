@@ -1,5 +1,6 @@
 '''Exercise 08 - Trace, and a main function to run tests'''
 
+from complex import Complex
 from matrix import Matrix
 
 
@@ -16,6 +17,11 @@ def main():
     print(Matrix([[1., 2.], [3., 4.]]).trace())  # 5
     print(Matrix([[8., -7.], [4., 2.]]).trace())  # 10
     print(Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).trace())  # 3
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    print(Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]).trace())  # (1.0+1.0i)
+    print(Matrix([[Complex(1., 2.), Complex(0.)], [Complex(0.), Complex(3., -1.)]]).trace())
 
 
 if __name__ == "__main__":

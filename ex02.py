@@ -1,6 +1,7 @@
 '''Exercise 02 - Linear interpolation, and a main function to run tests'''
 
 from typing import TypeVar, cast
+from complex import Complex
 from matrix import Matrix
 from vector import Vector
 
@@ -43,6 +44,13 @@ def main():
     print(lerp(0., 42., 0.5))    # 21.0
     print(lerp(-42., 42., 0.5))  # 0.0
     lerp(Vector([-42., 42.]), Vector([42., -42.]), 0.5).print_vector()  # [0.0] [0.0]
+
+    print("-- K = Complex --")
+    lerp(Vector([Complex(0.), Complex(0.)]), Vector([Complex(2.), Complex(0., 1.)]), 0.5) \
+        .print_vector()  # [(1.0+0.0i)] [(0.0+0.5i)]
+    lerp(Matrix([[Complex(0.), Complex(1.)], [Complex(2., 1.), Complex(0.)]]),
+         Matrix([[Complex(2.), Complex(3.)], [Complex(4., -1.), Complex(0., 2.)]]),
+         0.5).print_matrix()  # [(1.0+0.0i), (2.0+0.0i)] [(3.0+0.0i), (0.0+1.0i)]
 
 
 if __name__ == "__main__":

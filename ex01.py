@@ -1,6 +1,7 @@
 '''Exercise 01 - Linear combination, and a main function to run tests'''
 
 from typing import TypeVar
+from complex import Complex
 from vector import Vector
 
 K = TypeVar("K")
@@ -55,6 +56,16 @@ def main():
     print(linear_combination(
         [Vector([-42., 100., -69.5]), Vector([1., 3., 5.])],
         [1., -10.]).value)  # [-52, 70, -119.5]
+
+    print("-- K = Complex --")
+    e1 = Vector([Complex(1.), Complex(0.)])
+    e2 = Vector([Complex(0.), Complex(1.)])
+    linear_combination([e1, e2], [Complex(2., 1.), Complex(0., -1.)]).print_vector()
+    # [(2.0+1.0i)] [(0.0-1.0i)]
+    linear_combination(
+        [Vector([Complex(1., 2.), Complex(3., -1.)]), Vector([Complex(0., 1.), Complex(1., 1.)])],
+        [Complex(1.), Complex(0., 1.)]).print_vector()
+    # [(0.0+2.0i)] [(2.0+0.0i)]
 
 
 if __name__ == "__main__":

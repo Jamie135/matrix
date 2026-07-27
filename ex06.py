@@ -1,6 +1,7 @@
 '''Exercise 06 - Cross product, and a main function to run tests'''
 
 from typing import TypeVar
+from complex import Complex
 from vector import Vector
 
 K = TypeVar("K")
@@ -38,6 +39,16 @@ def main():
     print(cross_product(Vector([1., 0., 0.]), Vector([0., 1., 0.])).value)  # [0, 0, 1]
     print(cross_product(Vector([8., 7., -4.]), Vector([3., 2., 1.])).value)  # [15, -20, -5]
     print(cross_product(Vector([1., 1., 1.]), Vector([1., 1., 1.])).value)  # [0, 0, 0]
+
+    print("-- K = Complex --")
+    cross_product(
+        Vector([Complex(0.), Complex(0.), Complex(1.)]),
+        Vector([Complex(1.), Complex(0.), Complex(0.)]),
+    ).print_vector()  # [(0.0+0.0i)] [(1.0+0.0i)] [(0.0+0.0i)]
+    cross_product(
+        Vector([Complex(1., 1.), Complex(0.), Complex(2.)]),
+        Vector([Complex(0., 1.), Complex(1.), Complex(0.)]),
+    ).print_vector()  # [(-2.0+0.0i)] [(0.0+2.0i)] [(1.0+1.0i)]
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 '''Exercise 12 - Inverse, and a main function to run tests'''
 
+from complex import Complex
 from matrix import Matrix
 
 
@@ -30,6 +31,13 @@ def main():
         Matrix([[1., 1.], [1., 1.]]).inverse()
     except TypeError as e:
         print(f"Error as expected: {e}")
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    Matrix([[Complex(1.), Complex(1.)], [Complex(0.), i]]).inverse().print_matrix()
+    # [(1.0+0.0i), (0.0+1.0i)] [(0.0+0.0i), (0.0-1.0i)]
+    Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]).inverse().print_matrix()
+    # [(1.0+0.0i), (0.0+0.0i)] [(0.0+0.0i), (0.0-1.0i)]
 
 
 if __name__ == "__main__":

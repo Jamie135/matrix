@@ -1,5 +1,6 @@
 '''Exercise 07 - Linear map, Matrix multiplication, and a main function to run tests'''
 
+from complex import Complex
 from vector import Vector
 from matrix import Matrix
 
@@ -29,6 +30,14 @@ def main():
     Matrix([[9, -4, 1], [3, 11, 2]]).mul_mat(Matrix([[2., 1.], [4., 2.], [1., 0.]])).print_matrix()
     Matrix([[9, -4, 1], [3, 11, 2], [1, 0, 0]]).mul_mat(Matrix([[2., 1., 0., 7], [4., 2., -5, -2], [1., 0., -1, 4]])).print_matrix()
     Matrix([[2., 1.], [1., 2.]]).mul_mat(Matrix([[2.], [4.]])).print_matrix()
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]) \
+        .mul_vec(Vector([Complex(2.), Complex(1.)])).print_vector()  # [(2.0+0.0i)] [(0.0+1.0i)]
+    Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]) \
+        .mul_mat(Matrix([[Complex(1., 1.), Complex(0.)], [Complex(0.), Complex(2.)]])) \
+        .print_matrix()  # [(1.0+1.0i), (0.0+0.0i)] [(0.0+0.0i), (0.0+2.0i)]
 
 
 if __name__ == "__main__":

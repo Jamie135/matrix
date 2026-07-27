@@ -1,5 +1,6 @@
 '''Exercise 00 - Add, Subtract and Scale, and a main function to run tests'''
 
+from complex import Complex
 from vector import Vector
 from matrix import Matrix
 
@@ -120,6 +121,34 @@ def main():
         m.scl(scalar)
         print(f"{a} * {scalar} =")
         m.print_matrix()
+
+    print("-- K = Complex: Vector add/sub/scl --")
+    u = Vector([Complex(2., 1.), Complex(3., -1.)])
+    v = Vector([Complex(5., -2.), Complex(1., 1.)])
+    u.add(v)
+    u.print_vector()  # [(7.0-1.0i)] [(4.0+0.0i)]
+
+    u = Vector([Complex(2., 1.), Complex(3., -1.)])
+    u.sub(v)
+    u.print_vector()  # [(-3.0+3.0i)] [(2.0-2.0i)]
+
+    u = Vector([Complex(2., 1.), Complex(3., -1.)])
+    u.scl(Complex(0., 1.))
+    u.print_vector()  # [(-1.0+2.0i)] [(1.0+3.0i)]
+
+    print("-- K = Complex: Matrix add/sub/scl --")
+    m = Matrix([[Complex(1., 1.), Complex(2.)], [Complex(3.), Complex(4., -1.)]])
+    n = Matrix([[Complex(7.), Complex(4., 2.)], [Complex(-2.), Complex(2.)]])
+    m.add(n)
+    m.print_matrix()
+
+    m = Matrix([[Complex(1., 1.), Complex(2.)], [Complex(3.), Complex(4., -1.)]])
+    m.sub(n)
+    m.print_matrix()
+
+    m = Matrix([[Complex(1., 1.), Complex(2.)], [Complex(3.), Complex(4., -1.)]])
+    m.scl(Complex(0., 1.))
+    m.print_matrix()
 
 
 if __name__ == "__main__":

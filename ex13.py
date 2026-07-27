@@ -1,5 +1,6 @@
 '''Exercise 13 - Rank, and a main function to run tests'''
 
+from complex import Complex
 from matrix import Matrix
 
 
@@ -24,6 +25,13 @@ def main():
     print(Matrix([[0., 1.], [1., 0.]]).rank())  # 2
     print(Matrix([[1., 2.], [3., 4.]]).rank())  # 2
     print(Matrix([[-7., 5.], [4., 6.]]).rank())  # 2
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    print(Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]).rank())  # 2
+    print(Matrix([[Complex(1.), Complex(2.)], [Complex(2.), Complex(4.)]]).rank())  # 1
+    print(Matrix([[Complex(1., 2.), Complex(3., -1.)], [Complex(0., 1.), Complex(1., 1.)]]).rank())
+    # 2
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 '''Exercise 09 - Transpose, and a main function to run tests'''
 
+from complex import Complex
 from matrix import Matrix
 
 
@@ -16,6 +17,12 @@ def main():
     Matrix([[0., 0.], [0., 0.]]).transpose().print_matrix()  # [0, 0] [0, 0]
     Matrix([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]).transpose().print_matrix()
     # identity, unchanged
+
+    print("-- K = Complex --")
+    i = Complex(0., 1.)
+    Matrix([[Complex(1.), Complex(0.)], [Complex(0.), i]]).transpose().print_matrix()
+    Matrix([[Complex(1., 2.), Complex(3., -1.)], [Complex(0., 1.), Complex(1., 1.)]]) \
+        .transpose().print_matrix()  # [(1.0+2.0i), (0.0+1.0i)] [(3.0-1.0i), (1.0+1.0i)]
 
 
 if __name__ == "__main__":
