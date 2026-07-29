@@ -14,8 +14,8 @@ def projection(fov: float, ratio: float, near: float, far: float) -> Matrix[floa
     '''
     Build the camera-to-screen (projection) matrix for a perspective frustum.
     fov is expected in radians. Output is column-major, and targets Normalized
-    Device Coordinates in [-1, 1] for x/y and [0, 1] for z, matching the
-    display tool's convention (see subject XX.0.2).
+    Device Coordinates in [-1, 1] for x/y/z, matching the display tool's
+    convention (see subject XX.0.2).
     '''
     if fov <= 0 or ratio <= 0 or near <= 0 or far <= near:
         raise ValueError("Invalid projection parameters")
@@ -25,11 +25,11 @@ def projection(fov: float, ratio: float, near: float, far: float) -> Matrix[floa
     range_inv: float = 1.0 / (near - far)
 
     # Matrix() takes a list of ROWS (it converts to column-major internally,
-    # see matrix.py). This targets NDC z in [0, 1] and x/y in [-1, 1].
+    # see matrix.py). This targets NDC z in [-1, 1] and x/y in [-1, 1].
     return Matrix([
         [f / ratio, 0., 0., 0.],
         [0., f, 0., 0.],
-        [0., 0., fma(far, range_inv, 0.), fma(far * near, range_inv, 0.)],
+        [0., 0., (far + near) / (near - far), (2. * far * near) / (near - far)],
         [0., 0., -1., 0.],
     ])
 

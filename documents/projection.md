@@ -43,11 +43,11 @@ Par défaut, le fichier est écrit dans `matrix_display/proj`. Il suffit ensuite
 ### 1. Tester plusieurs FoV (100°, 70°, 40°)
 
 ```bash
-python3 ex14.py 100 1.0 0.1 100.0
+python3 ex14.py 100 1.777 0.5 100.0
 ./matrix_display/display
-python3 ex14.py 70 1.0 0.1 100.0
+python3 ex14.py 70 1.777 0.5 100.0
 ./matrix_display/display
-python3 ex14.py 40 1.0 0.1 100.0
+python3 ex14.py 40 1.777 0.5 100.0
 ./matrix_display/display
 ```
 
@@ -56,11 +56,11 @@ python3 ex14.py 40 1.0 0.1 100.0
 ### 2. Tester plusieurs ratios
 
 ```bash
-python3 ex14.py 70 1.0 0.1 100.0
+python3 ex14.py 100 1.0 0.5 100.0
 ./matrix_display/display
-python3 ex14.py 70 1.7778 0.1 100.0   # 16/9
+python3 ex14.py 100 1.7778 0.5 100.0   # 16/9
 ./matrix_display/display
-python3 ex14.py 70 0.5 0.1 100.0
+python3 ex14.py 100 0.5 0.5 100.0
 ./matrix_display/display
 ```
 
@@ -69,9 +69,9 @@ python3 ex14.py 70 0.5 0.1 100.0
 ### 3. Tester plusieurs combinaisons near/far (`near < far`)
 
 ```bash
-python3 ex14.py 70 1.0 1.0 10.0
+python3 ex14.py 100 1.777 1.0 10.0
 ./matrix_display/display
-python3 ex14.py 70 1.0 5.0 50.0
+python3 ex14.py 100 1.777 5.0 50.0
 ./matrix_display/display
 ```
 
