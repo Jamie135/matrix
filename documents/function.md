@@ -1,6 +1,6 @@
 # Fonctions
 
-Ce document résume les fonctions abordées dans cette conversation, dans l'ordre où elles ont été expliquées : [`ex01.py`](../ex01.py), [`ex02.py`](../ex02.py), [`ex05.py`](../ex05.py), [`ex06.py`](../ex06.py), [`vector.py`](../vector.py) et [`matrix.py`](../matrix.py).
+Ce document résume les fonctions abordées dans chaque exercice.
 
 ## `add` / `sub` / `scl` (vector.py)
 
