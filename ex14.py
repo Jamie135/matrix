@@ -1,5 +1,6 @@
 '''Exercise 14 - Bonus: Projection matrix, and a main function to run tests'''
 
+import sys
 from math import tan
 from matrix import Matrix
 
@@ -33,6 +34,19 @@ def projection(fov: float, ratio: float, near: float, far: float) -> Matrix[floa
     ])
 
 
+def write_proj(fov_deg: float, ratio: float, near: float, far: float, path: str) -> None:
+    '''Write a projection matrix to a file in the format expected by the
+    matrix_display tool (comma-separated rows).'''
+    radians = fov_deg * 3.14159265358979323846 / 180.0
+    m = projection(radians, ratio, near, far)
+    row_count = m.size()[0]
+    rows = [[m.value[j] for j in range(i, len(m.value), row_count)] for i in range(row_count)]
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(", ".join(map(str, row)) for row in rows))
+        f.write("\n")
+    print(f"Wrote fov={fov_deg} ratio={ratio} near={near} far={far} to {path}")
+
+
 def main():
     '''Test case for exercise 14'''
     print("Results for exercise 14")
@@ -47,12 +61,16 @@ def main():
     projection(70. * 3.14159265358979323846 / 180.0, 16 / 9, 0.1, 100.0).print_matrix()
 
     print("Write the matrix to a file to feed the provided 'display' tool, e.g.:")
-    print("  python3 -c \"from ex14 import projection; "
-          "print('\\n'.join(', '.join(map(str, row)) for row in projection(...).value))\"")
+    print("  python3 ex14.py 70 1.0 0.1 100.0 [output_path]")
 
 
 if __name__ == "__main__":
     try:
-        main()
+        if len(sys.argv) >= 5:
+            out_path = sys.argv[5] if len(sys.argv) >= 6 else "matrix_display/proj"
+            write_proj(float(sys.argv[1]), float(sys.argv[2]),
+                       float(sys.argv[3]), float(sys.argv[4]), out_path)
+        else:
+            main()
     except (TypeError, ValueError, ZeroDivisionError) as e:
         print(f"Error: {e}")
