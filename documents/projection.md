@@ -77,11 +77,9 @@ python3 ex14.py 100 1.0 5.0 50.0
 
 **Attendu :** des valeurs différentes de `near`/`far` doivent changer la distance à laquelle les objets disparaissent de l'écran (clipping plus ou moins proche/lointain).
 
-## Questions pour l'étudiant
+## Note
 
-Pour vérifier la compréhension, on peut demander d'expliquer ce que représente chaque composant de la matrice :
-
-- Que représente `f = 1/tan(fov/2)` et pourquoi varie-t-il en sens inverse du FoV ?
-- Pourquoi seule la ligne 1 est divisée par `ratio`, et pas la ligne 2 ?
-- Que fait concrètement la ligne 3, et pourquoi dépend-elle à la fois de `near` et de `far` ?
-- Pourquoi la ligne 4 (`[0, 0, -1, 0]`) est-elle nécessaire pour obtenir un effet de perspective, et que se passe-t-il si on la remplace par `[0, 0, 0, 1]` (projection orthographique, sans perspective) ?
+Si la commande ./display ne marche pas sur les postes 42, essaye:
+```bash
+WINIT_UNIX_BACKEND=x11 ./display
+```
